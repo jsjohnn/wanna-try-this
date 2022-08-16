@@ -94,7 +94,7 @@ const Result = () => {
     'super-name',
     () => {
       return axios.get(
-        `http://localhost:5000/api/food/result?mood=${answerData.mood}&age=${answerData.age}&money=${answerData.money}&ingredient=${answerData.ingredient}`,
+        `https://localhost:5000/api/food/result?mood=${answerData.mood}&age=${answerData.age}&money=${answerData.money}&ingredient=${answerData.ingredient}`,
       );
     },
     { staleTime: Infinity },
