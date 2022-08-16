@@ -49,7 +49,7 @@ const Modal = () => {
         {!isOpen ? (
           <Container>
             <div>
-              <a href="https://wanna-try-this-back.herokuapp.com/api/auth/kakao" rel="noreferrer">
+              <a href="http://localhost:5000/api/auth/kakao" rel="noreferrer">
                 <ButtonContainer
                   whileHover={{ scale: 1.2 }}
                   className="kakaoLogo"
