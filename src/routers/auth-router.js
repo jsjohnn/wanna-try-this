@@ -18,7 +18,7 @@ authRouter.get(
 	(req, res) => {
 		try {
 			setUserToken(req.user, res);
-			res.redirect(`https://wanna-try-this.herokuapp.com/Loading/`);
+			res.redirect(`https://wanna-try-this-team5.herokuapp.com/Loading/`);
 		} catch (err) {
 			next(err);
 		}
