@@ -1,4 +1,4 @@
-import { Router } from 'express';
+import { Router, Request, Response, NextFunction } from 'express';
 import { userService } from '../services/index.js';
 import {
 	loginRequired,
@@ -28,7 +28,7 @@ userRouter.patch(
 	'/nickname',
 	loginRequired,
 	changeNicknameValidator,
-	async (req, res, next) => {
+	async (req: Request, res: Response, next: NextFunction) => {
 
 		const { newNickname } = req.body;
 
@@ -57,7 +57,7 @@ userRouter.patch(
 	'/food',
 	loginRequired,
 	addFoodValidator,
-	async (req, res, next) => {
+	async (req: Request, res: Response, next: NextFunction) => {
 
 		const { addFoodId } = req.body;
 

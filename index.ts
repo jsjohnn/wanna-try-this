@@ -5,7 +5,6 @@ import path from 'path';
 
 const __dirname = path.resolve();
 
-// .env 파일에 예를 들어 PORT="3000" 을 작성하면, process.env.PORT가 3000이 됨
 const PORT = process.env.PORT || 5000;
 
 app.listen(PORT, () => {
@@ -17,3 +16,4 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 app.get('*', (req, res) => {
 	res.sendFile(path.join(__dirname + '/client/build/index.html'));
 });
+
