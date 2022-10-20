@@ -3,20 +3,26 @@ import { foodService } from '../services/index.js';
 
 const foodRouter = Router();
 
-//음식추가
 foodRouter.post('/', async (req, res, next) => {
-	const foodInfo = req.body;
+	const name: string = req.body.name;
+	const img: string = req.body.img;
+	const comment: string = req.body.comment;
+	const mood: string[] = req.body.mood;
+	const age: string[] = req.body.age;
+	const money: string = req.body.money;
+	const ingredient: string[] = req.body.ingredient;
+	const nation: string = req.body.nation;
+
+	const foodInfo = { name, img, comment, mood, age, money, ingredient, nation };
 
 	try {
 		const addNewFood = await foodService.addFood(foodInfo);
-
 		res.status(201).json(addNewFood);
 	} catch (err) {
 		next(err);
 	}
 });
 
-//모든음식get
 foodRouter.get('/', async (req, res, next) => {
 	try {
 		const getFoods = await foodService.findAll();
@@ -60,7 +66,6 @@ foodRouter.get('/perPage', async (req, res, next) => {
 	}
 });
 
-//필터링음식get
 foodRouter.get('/result', async (req, res, next) => {
 	const { mood, age, money, ingredient } = req.query;
 
@@ -93,7 +98,6 @@ foodRouter.get('/result', async (req, res, next) => {
 	}
 });
 
-//국가별 음식 get
 foodRouter.get('/:nation', async (req, res, next) => {
 	const { nation } = req.params;
 

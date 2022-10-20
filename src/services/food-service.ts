@@ -1,12 +1,24 @@
-import { foodModel } from '../db/index.js';
+import { FoodModel, foodModel } from '../db/index.js';
+
+interface FoodInfo {
+	name: string;
+	img: string;
+	comment: string;
+	mood: string[];
+	age: string[];
+	money: string;
+	ingredient: string[];
+	nation: string;
+}
 
 class FoodService {
-	// 본 파일의 맨 아래에서, new FoodService(foodModel) 하면, 이 함수의 인자로 전달됨
-	constructor(foodModel) {
+	foodModel: FoodModel;
+
+	constructor(foodModel: FoodModel) {
 		this.foodModel = foodModel;
 	}
 
-	async addFood(foodInfo) {
+	async addFood(foodInfo: FoodInfo) {
 		const newFood = await this.foodModel.createNewFood(foodInfo);
 		return newFood;
 	}
@@ -16,17 +28,17 @@ class FoodService {
 		return allFoods;
 	}
 
-	async findByNation(nation) {
+	async findByNation(nation: string) {
 		const foods = await this.foodModel.findByNation(nation);
 		return foods;
 	}
 
-	async foodFilter(answers) {
+	async foodFilter(answers: any) {
 		const findFoods = await this.foodModel.foodFilter(answers);
 		return findFoods;
 	}
 
-	async pagination(allProduct, currentPageNum, perPageNum) {
+	async pagination(allProduct: any, currentPageNum: number, perPageNum: 15) {
 		const currentProducts = await allProduct.slice(
 			perPageNum * (currentPageNum - 1),
 			perPageNum * (currentPageNum - 1) + perPageNum

@@ -9,20 +9,20 @@ import { setUserToken } from '../utils/index.js';
 
 const userRouter = Router();
 
-userRouter.get('/', loginRequired, async (req, res, next) => {
-	try {
-		const user = await userService.getUserByReq(req);
-		const userId = user._id;
+// userRouter.get('/', loginRequired, async (req, res, next) => {
+// 	try {
+// 		const user = await userService.getUserByReq(req.body);
+// 		const userId = user ? user._id : null;
 
-		if (!userId) {
-			throw new Error('userId 값이 없습니다.');
-		}
-		const userInfo = await userService.getUser(userId);
-		res.status(200).json(userInfo);
-	} catch (err) {
-		next(err);
-	}
-});
+// 		if (!userId) {
+// 			throw new Error('userId 값이 없습니다.');
+// 		}
+// 		const userInfo = await userService.getUser(userId);
+// 		res.status(200).json(userInfo);
+// 	} catch (err) {
+// 		next(err);
+// 	}
+// });
 
 userRouter.patch(
 	'/nickname',
@@ -33,8 +33,8 @@ userRouter.patch(
 		const { newNickname } = req.body;
 
 		try {
-			const user = await userService.getUserByReq(req);
-			const userId = user._id;
+			const user = await userService.getUserByReq(req.body);
+			const userId = user ? user._id : null;
 
 			if (!userId) {
 				throw new Error('userId 값이 없습니다.');
@@ -62,8 +62,8 @@ userRouter.patch(
 		const { addFoodId } = req.body;
 
 		try {
-			const user = await userService.getUserByReq(req);
-			const userId = user._id;
+			const user = await userService.getUserByReq(req.body);
+			const userId = user ? user._id : null;
 
 			if (!userId) {
 				throw new Error('userId 값이 없습니다.');
@@ -79,8 +79,8 @@ userRouter.patch(
 
 userRouter.delete('/', loginRequired, async (req, res, next) => {
 	try {
-		const user = await userService.getUserByReq(req);
-		const userId = user._id;
+		const user = await userService.getUserByReq(req.body);
+		const userId = user ? user._id : null;
 
 		if (!userId) {
 			throw new Error('userId 값이 없습니다.');

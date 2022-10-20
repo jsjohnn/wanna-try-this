@@ -1,9 +1,20 @@
-import jwt from 'jsonwebtoken';
+import jwt, { JwtPayload } from 'jsonwebtoken';
 import dotenv from 'dotenv';
+import { Request, Response, NextFunction } from 'express';
 
 dotenv.config();
 
-function loginRequired(req, res, next) {
+// Request 객체 확장
+declare global {
+  namespace Express {
+    export interface Request {
+      email?: string | JwtPayload;
+      provider?: string | JwtPayload;
+    }
+  }
+}
+
+function loginRequired(req: Request, res: Response, next: NextFunction) {
 	const userToken = req.headers['authorization']?.split(' ')[1];
 
 	if (!userToken || userToken === 'null') {
@@ -17,7 +28,7 @@ function loginRequired(req, res, next) {
 
 	try {
 		const secretKey = process.env.JWT_SECRET;
-		const jwtDecoded = jwt.verify(userToken, secretKey);
+		const jwtDecoded = jwt.verify(userToken, secretKey as string) as JwtPayload;
 
 		req.email = jwtDecoded.email;
 		req.provider = jwtDecoded.provider;
