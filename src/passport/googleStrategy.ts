@@ -4,13 +4,13 @@ import { userModel } from '../db/index.js';
 
 export const google = new Strategy(
 	{
-		clientID: process.env.GOOGLE_ID,
-		clientSecret: process.env.GOOGLE_SECRET,
+		clientID: process.env.GOOGLE_ID!,
+		clientSecret: process.env.GOOGLE_SECRET!,
 		callbackURL: '/api/auth/google/callback',
 	},
 	async (accessToken, refreshToken, profile, done) => {
 		const nickname = profile.displayName;
-		const email = profile.emails[0].value;
+		const email = profile.emails![0].value;
 		const provider = profile.provider;
 
 		try {
@@ -27,7 +27,7 @@ export const google = new Strategy(
 			});
 
 			done(null, createdUser);
-		} catch (err) {
+		} catch (err: any) {
 			done(null, err);
 		}
 	},

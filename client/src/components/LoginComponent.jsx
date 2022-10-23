@@ -6,7 +6,7 @@ export const LoginComponent = () => {
   const { data } = useQuery(
     'login',
     async () => {
-      return await fetch('http://kdt-sw2-busan-team05.elicecoding.com:5002/api/auth/kakao');
+      return await fetch('http://localhost:5000/api/auth/kakao');
     },
     {
       onSuccess: (data) => {
@@ -21,7 +21,7 @@ export const LoginComponent = () => {
 
   return (
     <div>
-      <a href="http://kdt-sw2-busan-team05.elicecoding.com:5002/api/auth/kakao">
+      <a href="http://localhost:5000/api/auth/kakao">
         <img
           className="kakaoLogo"
           src="../login/login-kakao.png"
@@ -32,7 +32,7 @@ export const LoginComponent = () => {
         />
       </a>
       <a
-        href="http://kdt-sw2-busan-team05.elicecoding.com:5002/api/auth/naver"
+        href="http://localhost:5000/api/auth/naver"
         target="_blank"
         rel="noreferrer"
       >
@@ -45,7 +45,7 @@ export const LoginComponent = () => {
         />
       </a>
       <a
-        href="http://kdt-sw2-busan-team05.elicecoding.com:5002/api/auth/google"
+        href="http://localhost:5000/api/auth/google"
         target="_blank"
         rel="noreferrer"
       >

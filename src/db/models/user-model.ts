@@ -1,21 +1,29 @@
-import pkg from 'mongoose';
+import pkg, { Types } from 'mongoose';
 const { model } = pkg;
 import { UserSchema } from '../schemas/user-schema.js';
+
+interface UserInfo {
+	email: string;
+	provider: string;
+}
+interface NewUserInfo extends UserInfo {
+	nickname: string;
+}
 
 const User = model('user', UserSchema);
 
 export class UserModel {
-	async create(newUserInfo) {
+	async create(newUserInfo: NewUserInfo) {
 		const createdNewUser = await User.create(newUserInfo);
 		return createdNewUser;
 	}
 
-	async findOne(userInfo) {
+	async findOne(userInfo: UserInfo) {
 		const user = await User.findOne(userInfo).populate('foodData.foodId');		
 		return user;
 	}
 
-	async findById(userId) {
+	async findById(userId: Types.ObjectId) {
 		const idUser = await User.findOne({ _id: userId }).populate(
 			'foodData.foodId',
 		);
@@ -24,7 +32,7 @@ export class UserModel {
 
 	}
 
-	async updateNick(userId, newNick) {
+	async updateNick(userId: Types.ObjectId, newNick: string) {
 		const updatedUser = await User.findOneAndUpdate(
 			{ _id: userId },
 			{ $set: { nickname: newNick } },
@@ -33,7 +41,7 @@ export class UserModel {
 		return updatedUser;
 	}
 
-	async updateUserFood(userId, newFoodId) {
+	async updateUserFood(userId: Types.ObjectId, newFoodId: any) {
 		const updateUser = await User.findOneAndUpdate(
 			{ _id: userId },
 			{ $push: { foodData: { foodId: newFoodId } } }, // user스키마 foodData배열에 새로 추천받은 음식 아이디 추가
@@ -42,7 +50,7 @@ export class UserModel {
 		return updateUser;
 	}
 
-	async deleteUser(userId) {
+	async deleteUser(userId: Types.ObjectId) {
 		const deleteUser = await User.findOneAndDelete({ _id: userId });
 		return deleteUser;
 	}

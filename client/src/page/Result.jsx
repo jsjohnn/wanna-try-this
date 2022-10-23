@@ -78,7 +78,7 @@ const Result = () => {
     const addFood = {
       addFoodId: foodId,
     };
-    return await fetch('http://kdt-sw2-busan-team05.elicecoding.com:5002/api/user/food/', {
+    return await fetch('http://localhost:5000/api/user/food/', {
       method: 'PATCH',
       headers: {
         'Content-Type': 'application/json',
@@ -94,7 +94,7 @@ const Result = () => {
     'super-name',
     () => {
       return axios.get(
-        `https://wanna-try-this-team5.herokuapp.com/api/food/result?mood=${answerData.mood}&age=${answerData.age}&money=${answerData.money}&ingredient=${answerData.ingredient}`,
+        `http://localhost:5000/api/food/result?mood=${answerData.mood}&age=${answerData.age}&money=${answerData.money}&ingredient=${answerData.ingredient}`,
       );
     },
     { staleTime: Infinity },

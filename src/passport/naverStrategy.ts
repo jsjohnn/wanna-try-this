@@ -1,6 +1,6 @@
 import 'dotenv/config';
 import { userModel } from '../db/index.js';
-import { Strategy as NaverStrategy } from 'passport-naver-v2';
+import { Strategy as NaverStrategy, Profile } from 'passport-naver-v2';
 
 const config = {
 	clientID: process.env.NAVER_ID,
@@ -11,7 +11,7 @@ const config = {
 //#region func:findOrCreateUser
 const provider = 'naver';
 
-async function findOrCreateUser(nickname, email) {
+async function findOrCreateUser(nickname: string, email: string) {
 	const user = await userModel.findOne({ email, provider });
 
 	if (user) {
@@ -31,12 +31,12 @@ async function findOrCreateUser(nickname, email) {
 export const naver = new NaverStrategy(
 	config,
 
-	async (accessToken, refreshToken, profile, done) => {
+	async (accessToken: string, refreshToken: string, profile: Profile, done: any) => {
 		const nickname = profile.name;
 		const email = profile.email;
 
 		try {
-			const user = await findOrCreateUser(nickname, email);
+			const user = await findOrCreateUser(nickname!, email!);
 			done(null, user);
 		} catch (error) {
 			console.error(error);

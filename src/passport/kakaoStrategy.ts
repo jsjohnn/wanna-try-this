@@ -1,16 +1,16 @@
 import 'dotenv/config';
 import { userModel } from '../db/index.js';
-import { Strategy as KakaoStrategy } from 'passport-kakao';
+import { Strategy as KakaoStrategy, Profile } from 'passport-kakao';
 
 const config = {
-	clientID: process.env.KAKAO_ID, // 카카오 로그인에서 발급받은 REST API 키
+	clientID: process.env.KAKAO_ID as string, // 카카오 로그인에서 발급받은 REST API 키
 	callbackURL: '/api/auth/kakao/callback', // 카카오 로그인 Redirect URI 경로
 };
 
 //#region func:findOrCreateUser
 const provider = 'KAKAO';
 
-async function findOrCreateUser(nickname, email) {
+async function findOrCreateUser(nickname: string, email: string) {
 	const userInfo = { email, provider };
 	const user = await userModel.findOne(userInfo);
 
@@ -31,7 +31,7 @@ async function findOrCreateUser(nickname, email) {
 export const kakao = new KakaoStrategy(
 	config,
 
-	async (accessToken, refreshToken, profile, done) => {
+	async (accessToken: string, refreshToken: string, profile: Profile, done: any) => {
 		const nickname = profile._json.properties.nickname;
 		const email = profile._json.kakao_account.email;
 
