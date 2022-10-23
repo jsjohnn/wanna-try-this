@@ -170,6 +170,8 @@ src
 ```
 </details>
 
+<br>
+
 ## 6. 시연 영상
 <img src="https://user-images.githubusercontent.com/63035520/197371958-7c154257-0d63-4810-8981-b67ee078b35c.gif" width="600" height="300">
 
