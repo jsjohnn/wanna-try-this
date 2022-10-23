@@ -1,9 +1,12 @@
+<div align="center">
 <h1> ❔질문에 대한 응답을 바탕으로 식사 메뉴를 추천해주는 웹 서비스❕</h1> <br>
-<center> <img src="/uploads/d113c7159a15addfc38cb843802d8ed3/image.png" width="50%" height="50%"> </center>
+<img src="https://user-images.githubusercontent.com/63035520/197370217-1d1cda2d-2a23-4981-8ec3-a6fbd8d576f4.png" width="50%" height="50%">
+
 <br>
 <br>
 
-## 서비스 링크: [이거머글랭?](http://kdt-sw2-busan-team05.elicecoding.com/)
+## 서비스 링크: [이거머글랭?](https://wanna-try-this-team5.herokuapp.com/)
+</div>
 
 ## 1. 기획 의도 & 목적
 
@@ -26,7 +29,7 @@
 - **서브 기능**
   1.  추천받은 음식 공유
   2.  마이페이지
-  3.  무한 스크롤 (...개발 중...)
+  3.  무한 스크롤
 
 <br>
 
@@ -44,48 +47,51 @@
 ### 🔧 사용 스택
 
 - **프론트엔드** <br>
-  <img src="/uploads/44ddf2162c59b627e8d4423396d98652/image.png" width="100" height="100">
+  <img src="https://img.shields.io/badge/JavaScript-F7DF1E?style=for-the-badge&logo=JavaScript&logoColor=white">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
+  <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled components&logoColor=white">
 
   ***
 
 - **백엔드** <br>
-  <img src="/uploads/a2279597680a8ab9c2a9538e5f6525ec/image.png" width="100" height="100"> <img src="/uploads/01d9ed0b244cfb770bf3ca4c0c761567/image.png" width="100" height="100"> <img src="/uploads/11537ce93f8f457fd25e1e3b18049141/image.png" width="100" height="100">
+  <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">
+  <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
+  <img src="https://img.shields.io/badge/Express.js-000000?style=for-the-badge&logo=Express.js&logoColor=white">
+  <img src="https://img.shields.io/badge/Jest-C21325?style=for-the-badge&logo=Jest&logoColor=white">
   <br>
   <br>
 
 ### 🎨 기획
 
 - **와이어프레임** <br>
-  <a href="https://www.figma.com/file/eaxRhh4SX5FSUEId05z0fz/5%ED%8C%80_%EC%99%80%EC%9D%B4%EC%96%B4%ED%94%84%EB%A0%88%EC%9E%84?node-id=50%3A1962"><img src="/uploads/8c3efbd4120c4a453bebf0818a8f9431/image.png" width="100" height="100"></a> <br>
-
+  <img src="https://user-images.githubusercontent.com/63035520/197370990-2387ef60-92da-45bc-aa35-91acc4248dc7.png" width="600" height="400">
+ 
+  
    <br>
 
 - **스토리보드 및 유저 시나리오**
   - 사용자는 홈 화면에서 골라볼래? 버튼을 클릭하면 모든 음식 데이터를 확인할 수 있다.
   - 사용자는 홈 화면에서 골라줄게! 버튼을 클릭하면 질문 페이지로 이동한다
-  - 사용자는 질문들에 대한 답을 고르면 결과 화면에서 그에 맞춰 음식을 추천받을 수 있다
+  - 사용자는 질문들에 대한 답을 고르면 결과 화면에서 음식을 추천받을 수 있다
   - 사용자는 추천받은 음식을 SNS에 공유하기 버튼을 클릭하여 링크를 공유할 수 있다.
-  - 사용자는 홈 화면에서 로그인 버튼을 눌러 로그인 할 수 있다.
-  - 사용자는 홈 화면에서 로그아웃 버튼을 눌러 로그아웃 할 수 있다.
-  - 사용자는 질문 페이지에서 로그인 버튼을 눌러 로그인 할 수 있다.
-  - 사용자는 질문 페이지에서 로그아웃 버튼을 눌러 로그아웃 할 수 있다.
-  - 사용자는 결과 페이지에서 로그인 버튼을 눌러 로그인 할 수 있다.
-  - 사용자는 결과 페이지에서 로그아웃 버튼을 눌러 로그아웃 할 수 있다.
-  - 사용자는 마이페이지에서 로그아웃 버튼을 눌러 로그아웃 할 수 있다.
+  - 사용자는 홈 페이지 / 질문 페이지 / 결과 페이지 에서 로그인 버튼을 눌러 로그인 할 수 있다.
+  - 사용자는 홈 페이지/ 질문 페이지 / 결과 페이지 / 마이페이지 에서 로그아웃 버튼을 눌러 로그아웃 할 수 있다.
   - 사용자는 마이페이지에서 닉네임을 변경할 수 있다.
   - 사용자는 마이페이지에서 지금까지 추천받은 음식에 대한 통계 데이터를 확인할 수 있다.
+
 
 <br>
 
 ### 📑 DevOps
 
-- **애자일 개발 프로세스** <br>
+- **Jira**를 통한 스크럼과 이슈 관리 <br>
+<img src="https://user-images.githubusercontent.com/63035520/197371574-10d5fabf-a8e0-4b26-9aa1-cdd347a2aa60.png">
 
  <br>
 
 ## 5. Architecture
-
-### Client
+<details>
+ <summary> Client </summary>
 
 ```
 src
@@ -122,9 +128,11 @@ src
  ┣ reportWebVitals.js
  ┗ setupTests.js
 ```
+</details>
 
-### Back
-
+<details>
+ <summary> Back </summary>
+ 
 ```
 src
  ┣ db
@@ -163,12 +171,8 @@ src
  ┃ ┗ setUserToken.js
  ┗ app.js
 ```
+</details>
 
-## 6. 구성원 역할
+## 6. 시연 영상
+<img src="https://user-images.githubusercontent.com/63035520/197371958-7c154257-0d63-4810-8981-b67ee078b35c.gif" width="600" height="300">
 
-|  이름  | 역할             |
-| :----: | ---------------- |
-| 서정민 | 프론트엔드, 팀장 |
-| 장기성 | 프론트엔드       |
-| 김동화 | 백엔드           |
-| 이채연 | 백엔드           |
