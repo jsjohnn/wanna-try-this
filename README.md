@@ -17,7 +17,7 @@
 
 <br>
 
-## 2. 웹 서비스의 주제 및, 최종적인 메인 기능과 서브 기능 설명
+## 2. 기능
 
 ### ✨ 주제:
 
@@ -131,7 +131,7 @@ src
 </details>
 
 <details>
- <summary> Back </summary>
+ <summary> Server </summary>
  
 ```
 src
