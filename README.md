@@ -19,13 +19,11 @@
 
 ## 2. 기능
 
-### ✨ 주제:
-
 - **메인 기능**
   1.  질문을 통한 메뉴추천
   2.  로그인 하고 추천 받은 음식을 저장하면 마이페이지에서 그동안 추천받은 음식의 통계 확인
   3.  소셜 로그인
-  ***
+  
 - **서브 기능**
   1.  추천받은 음식 공유
   2.  마이페이지
@@ -51,8 +49,7 @@
   <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=React&logoColor=white">
   <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled components&logoColor=white">
 
-  ***
-
+  
 - **백엔드** <br>
   <img src="https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=TypeScript&logoColor=white">
   <img src="https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=Node.js&logoColor=white">
@@ -70,12 +67,12 @@
    <br>
 
 - **스토리보드 및 유저 시나리오**
-  - 사용자는 홈 화면에서 골라볼래? 버튼을 클릭하면 모든 음식 데이터를 확인할 수 있다.
-  - 사용자는 홈 화면에서 골라줄게! 버튼을 클릭하면 질문 페이지로 이동한다
-  - 사용자는 질문들에 대한 답을 고르면 결과 화면에서 음식을 추천받을 수 있다
+  - 사용자는 홈 페이지에서 골라볼래? 버튼을 클릭하면 모든 음식 데이터를 확인할 수 있다.
+  - 사용자는 홈 페이지에서 골라줄게! 버튼을 클릭하면 질문 페이지로 이동한다
+  - 사용자는 질문들에 대한 답을 고르면 결과 페이지에서 음식을 추천받을 수 있다
   - 사용자는 추천받은 음식을 SNS에 공유하기 버튼을 클릭하여 링크를 공유할 수 있다.
   - 사용자는 홈 페이지 / 질문 페이지 / 결과 페이지 에서 로그인 버튼을 눌러 로그인 할 수 있다.
-  - 사용자는 홈 페이지/ 질문 페이지 / 결과 페이지 / 마이페이지 에서 로그아웃 버튼을 눌러 로그아웃 할 수 있다.
+  - 사용자는 홈 페이지 / 질문 페이지 / 결과 페이지 / 마이페이지 에서 로그아웃 버튼을 눌러 로그아웃 할 수 있다.
   - 사용자는 마이페이지에서 닉네임을 변경할 수 있다.
   - 사용자는 마이페이지에서 지금까지 추천받은 음식에 대한 통계 데이터를 확인할 수 있다.
 
